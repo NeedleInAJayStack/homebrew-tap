@@ -1,20 +1,30 @@
-class Unit < Formula
-  desc "Manipulate, compare, and convert any combination of physical quantities."
+# Documentation: https://docs.brew.sh/Formula-Cookbook
+#                https://rubydoc.brew.sh/Formula
+class Units < Formula
+  desc "Manipulate, compare, and convert any combination of physical quantities. "
   homepage "https://github.com/NeedleInAJayStack/Units"
-  url "git@gitlab.com:NeedleInAJayStack/Units.git",
-      using:    :git,
-      tag:      "v0.1.4",
-      revision: "bc4481bd9f9b35e7e1060310c7cfe1a3714f9003"
+  license "MIT"
+  version "0.1.5"
 
-  depends_on "bash"
+  on_macos do
+    url "https://github.com/NeedleInAJayStack/Units/releases/download/untagged-750138ff46e97ab71f60/v0.1.5-macos-latest.tar.gz"
+    sha256 "0c72165d849c8cfa43e6ea41e27d8b52dc3db4fb3e5533b275ff7076619822ca"
 
-  def install
-  inreplace "pl-swiftlint.sh", /^PL_SWIFTLINT_CONFIG=.*$/, "PL_SWIFTLINT_CONFIG=#{pkgshare}/pl-default-swiftlint.yml"
-    bin.install "pl-swiftlint.sh" => "pl-swiftlint"
-    pkgshare.install "pl-default-swiftlint.yml"
+    def install
+      bin.install "./unit"
+    end
+  end
+
+  on_linux do
+    url "https://github.com/NeedleInAJayStack/Units/releases/download/untagged-750138ff46e97ab71f60/v0.1.5-ubuntu-latest.tar.gz"
+    sha256 "efb1b32e5b6fc1e6082fb892aa0acc549aeaccc72dc73d7aa6c61b7bebccf9a3"
+
+    def install
+      bin.install "./unit"
+    end
   end
 
   test do
-    system "#{bin}/pl-swiftlint", "--help"
+    system "#{bin}/unit --help"
   end
 end

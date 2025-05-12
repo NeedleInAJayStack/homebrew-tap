@@ -4,11 +4,11 @@ class Units < Formula
   desc "Manipulate, compare, and convert any combination of physical quantities. "
   homepage "https://github.com/NeedleInAJayStack/Units"
   license "MIT"
-  version "0.1.5"
+  version "0.1.6"
 
   on_macos do
-    url "https://github.com/NeedleInAJayStack/Units/releases/download/v0.1.5/v0.1.5-macos-latest.tar.gz"
-    sha256 "0c72165d849c8cfa43e6ea41e27d8b52dc3db4fb3e5533b275ff7076619822ca"
+    url "https://github.com/NeedleInAJayStack/Units/releases/download/v0.1.6/v0.1.6-macos-latest.tar.gz"
+    sha256 "d12811cd67e7132236bf0e20149385d678aa5d228c9a1c1db38a54e40e6ce7dd"
 
     def install
       bin.install "./unit"
@@ -16,8 +16,8 @@ class Units < Formula
   end
 
   on_linux do
-    url "https://github.com/NeedleInAJayStack/Units/releases/download/v0.1.5/v0.1.5-ubuntu-latest.tar.gz"
-    sha256 "efb1b32e5b6fc1e6082fb892aa0acc549aeaccc72dc73d7aa6c61b7bebccf9a3"
+    url "https://github.com/NeedleInAJayStack/Units/releases/download/v0.1.6/v0.1.6-ubuntu-latest.tar.gz"
+    sha256 "332824fe31a411a4a3c7d6b6ce0223fea2599e9335c68d29d95aed68b7ce3c7b"
 
     def install
       bin.install "./unit"
